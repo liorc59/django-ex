@@ -13,9 +13,7 @@ def index(request):
     PageView.objects.create(hostname=hostname)
 
     return render(request, 'welcome/index.html', {
-        'hostname': hostname,
-        'database': database.info(),
-        'count': PageView.objects.count()
+       'hello from python'
     })
 
 def health(request):
