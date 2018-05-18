@@ -13,14 +13,8 @@ def index(request):
     PageView.objects.create(hostname=hostname)
 
     return render(request, 'welcome/index.html', {
-        'hostname': hostname,
-        'database': database.info(),
-        'count': PageView.objects.count()
     })
 
 def health(request):
     return HttpResponse(PageView.objects.count())
-	
-@app.route('/sayhey')
-def display():
-    return "hello from python!"
+
